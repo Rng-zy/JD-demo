@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		/*div{
+			width: 200px;
+			height: 200px;
+			background-color: greenyellow;
+		}*/
+	/*	默认字体大小是16px
+			1em = 16px 
+			10em = 160px*/
+			/*字体最小是12px不要写12px以下的*/
+		/* div{
+			font-size: 12px;
+			width: 10em;
+			height: 10em;
+			background-color:yellowgreen;
+		} */
+		html{
+			font-size: 20px;
+		}
+		/*rem是根元素html的字体大小 html默认也是16px*/
+		/*1rem = 16px*/
+	/*	div{
+			width: 10rem;
+			height: 10rem;
+			background-color: pink;
+		}*/
+		.box1{
+			width: 10rem;
+			height: 10rem;
+			background-color: pink;
+			font-size: 20px;
+		}
+		.box2{
+			font-size: 30px;
+			width: 10rem;
+			height: 10rem;
+			background-color: green;
+		}
+		/* em表示当前字体大小 
+		页面的每个元素的字体不统一的 不方便全局操控 这样造成每个元素的em的值都不统一  
+		实现页面的自适应很麻烦 */
+		/*rem表示根元素的字体大小*/
+		/*根元素只有一个 只要修改了根元素的字体大小全局都会变化*/
+		/*rem可以实现只修改根元素的字体大小 所有设置rem的都会跟着自适应变化*/
+		/*一般用来实现页面的屏幕适配（手机屏幕参差不齐每个屏幕内容的大小宽度不一样）*/
+		/*实现不同屏幕 页面元素的大小 和字体大小都不一样*/
+		/*能够实现页面的等比缩放的效果*/
+		/*rem和百分比布局的区别*/
+		/*rem的布局 不仅可以实现宽度的自适应 还能够实现高度的自适应*/
+		/*百分比 只能实现宽度自适应 高度是无法自适应*/
+	</style>
+</head>
+<body>
+	<div></div>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<!-- em: element 表示当前元素的字体大小 -->
+	<!-- rem ： root element 表示根元素的字体大小 -->
+</body>
+</html>

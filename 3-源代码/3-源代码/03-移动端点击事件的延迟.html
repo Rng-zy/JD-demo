@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+    var div = document.querySelector('div');
+    div.addEventListener('click', function() {
+        console.log('click');
+    });
+    // var time = 0;
+    // var time1 = 
+    /*使用touchstart和touchend事件模拟的click事件
+    如果触发了touchstart和touchend但是没有触发touchmove那就认为是单击操作
+    执行click事件的代码*/
+    div.addEventListener('touchstart', function() {
+    	time = new Date().getTime();
+        console.log('touchstart');
+    });
+    div.addEventListener('touchmove', function() {
+        console.log('touchmove');
+    });
+    div.addEventListener('touchend', function() {
+        console.log('touchend');
+    })
+    </script>
+</body>
+
+</html>

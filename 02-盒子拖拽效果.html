@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 50px;
+        height: 50px;
+        background-color: red;
+    }
+</style>
+<body>
+            <div></div>
+</body>
+<script>
+    var  div=document.querySelector("div");
+    var  startW=0;
+    var startH=0;
+    var moveW=0;
+    var moveH=0;
+    var endW=0;
+    var endH=0;
+    var w=0;
+    var h=0;
+    var currentW=currentH=0;
+    // 记录手指移入start事件  手指的开始位置；
+    div.addEventListener("touchstart",function (e) {
+        startW=e.touches[0].clientX;
+        startH=e.touches[0].clientY;
+        // console.log(startW);
+      })
+      div.addEventListener("touchmove",function (e) {
+        moveW=e.touches[0].clientX;
+        moveH=e.touches[0].clientY;
+        console.log(moveW);
+        w=moveW-startW;
+        // console.log(w);
+        h=moveH-startH;
+        div.style.transform="translate("+(w+currentW)+"px, "+(h+currentH)+"px)";
+        // console.log(div.style.transform);
+      })
+      div.addEventListener("touchend",function (e) {
+          currentW+=w;
+          currentH+=h;
+        })
+</script>
+</html>

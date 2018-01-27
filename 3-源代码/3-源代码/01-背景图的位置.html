@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    div {
+        padding: 100px;
+        border: 50px solid rgba(0, 0, 0, 0.3);
+        width: 500px;
+        height: 500px;
+        box-sizing: border-box;
+        background-image: url(images/sprites.png);
+        background-size: 200px 200px;
+        background-repeat: no-repeat;
+        /*图片的定位起点默认是在padding区域*/
+        /*调整背景图的定位起点 border-box  padding-box  content-box       */
+        background-origin: content-box;	
+        /*背景图的裁切 border-box  content-box  padding-box  默认是border-box*/
+        background-clip: content-box;	
+    }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

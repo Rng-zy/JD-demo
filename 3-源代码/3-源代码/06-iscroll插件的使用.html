@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 需要一个父容器 并且需要一个子容器 父容器的高度是固定 子容器高度是内容撑开（并且大于父容器的高度） */
+    
+    #wrapper {
+        height: 200px;
+        width: 300px;
+        background-color: #eee;
+        overflow: hidden;
+        /* 让滚动条参照父元素 */
+        position: relative;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <ul>
+            <li>这是一个列表1</li>
+            <li>这是一个列表2</li>
+            <li>这是一个列表3</li>
+            <li>这是一个列表4</li>
+            <li>这是一个列表5</li>
+            <li>这是一个列表6</li>
+            <li>这是一个列表7</li>
+            <li>这是一个列表8</li>
+            <li>这是一个列表9</li>
+            <li>这是一个列表10</li>
+            <li>这是一个列表11</li>
+            <li>这是一个列表12</li>
+            <li>这是一个列表13</li>
+            <li>这是一个列表14</li>
+            <li>这是一个列表15</li>
+            <li>这是一个列表16</li>
+            <li>这是一个列表17</li>
+            <li>这是一个列表18</li>
+            <li>这是一个列表19</li>
+            <li>这是一个列表20</li>
+        </ul>
+    </div>
+    <!-- 1. 引入iscroll的JS包 -->
+    <script src="lib/iscroll/iscroll.js"></script>
+    <script type="text/javascript">
+    // 初始iscroll插件 传入父容器的选择器
+    var myScroll = new IScroll('#wrapper', {
+        // 支持PC端的鼠标滚轮
+        mouseWheel: true,
+        // 是否添加滚动条
+        scrollbars: true,
+        // infiniteElements: 'ul li'
+        // 弹簧的过渡的速度
+        bounceTime:60
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    /*这是使用媒体查询动态改变html字体大小*/
+    
+    @media(width:320px) {
+        html {
+            font-size: 32px;
+        }
+    }
+    
+    div {
+    	/* 当前量的px/当前设计稿对应的html的字体大小
+    	50/640屏幕对应是html字体 
+    	50/640px */
+        width: 0.78125rem;
+        height: 0.78125rem;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <!-- 	1. rem适配的原理是改变根元素的字体大小 来实现全局自适应
+假如640px的时候 根元素的字体大小是100px
+414  414/640 * 100 64.68
+375  375/640*100  58.59px
+320px的时候根元素的字体大小就是50px
+320 / 640 * 100  50px -->
+    <script>
+    function getHtmlFontSize() {
+        // 1. 获取当前屏幕的宽度
+        var windowWidth = document.body.offsetWidth || document.documentElement.offsetWidth;
+        /*320px == 32px
+        321 = 32.1
+        414px 41.4px*/
+        var htmlFontSize = windowWidth / 10;
+        document.querySelector('html').style.fontSize = htmlFontSize + 'px';
+    }
+    getHtmlFontSize();
+    window.addEventListener('resize', getHtmlFontSize);
+    </script>
+</body>
+
+</html>

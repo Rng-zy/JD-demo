@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <style>
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+    }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+    var div = document.querySelector('div');
+     div.addEventListener('click', function () {
+       console.log('click'); 
+    });
+    // 移动端大概有300ms左右的延迟 是移动端为了兼容双击操作 
+    // 如果300ms只点击了一次就是单击 如果点击2次就是双击
+    // 使用touch事件模拟一个移动端的单击事件一般这个名称（tap）轻触事件
+    function tap(dom, callback) {
+        // 是否触发了滑动中的事件
+        var isMove = false;
+        dom.addEventListener('touchstart', function(e) {
+
+        });
+        dom.addEventListener('touchmove', function(e) {
+            // 当触发了滑动中事件
+            isMove = true;
+        });
+        dom.addEventListener('touchend', function(e) {
+            if (isMove == false) {
+                // 就是一个单击操作 执行回调函数
+                callback();
+            }
+            // 每次点击完毕重置isMove
+            isMove = false;
+        });
+    }
+    tap(div, function() {
+        console.log('这是移动端的tap事件');
+    });
+   
+    </script>
+</body>
+
+</html>
